@@ -1,0 +1,46 @@
+{{ with .Params.contact }}
+{{ if .enable }}
+<section class="pt-1 pb-5 bg-gray-100">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-6 mx-auto text-center">
+          <h2>{{ .title }}</h2>
+          <p>{{ .details }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 mx-auto row row-gap-3">
+            <div class="col-lg-6 mx-auto">
+              <div class="border px-2 rounded-3 shadow-3 bg-white d-flex justify-content-between align-items-center">
+                <input type="text" placeholder="Full Name" class="form-control" >
+                <i class="fas fa-user text-gray"></i>
+              </div>
+            </div>
+            <div class="col-lg-6 mx-auto">
+              <div class="border px-2 rounded-3 shadow-3 bg-white d-flex justify-content-between align-items-center">
+                <input type="email" placeholder="Email Address" class="form-control" >
+                <i class="fas fa-envelope text-gray"></i>
+              </div>
+          </div>
+          <div class="col-lg-12 mx-auto">
+            <div class="border px-2 rounded-3 shadow-3 bg-white d-flex justify-content-between align-items-center">
+              <select name="" id="" class="form-control">
+                <option value="">Choose Subject</option>
+              </select>
+              <i class="fas fa-caret-down text-gray"></i>
+            </div>
+          </div>
+          <div class="col-lg-12 mx-auto">
+            <div class="border px-2 rounded-3 shadow-3 bg-white d-flex justify-content-between align-items-center">
+              <textarea name="" id="" rows="4" class="form-control" placeholder="Your Message"></textarea>
+            </div>
+          </div>
+          <div class="col-3 mx-auto">
+            <button class="col-12 border-0 bg-gradient-dark px-3 py-2 rounded-pill text-white">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

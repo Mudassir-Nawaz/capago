@@ -1,0 +1,8 @@
+{{ $main := resources.Get "css/material-kit-pro.css" }}
+{{ $nucleo_svg := resources.Get "css/nucleo-svg.css" }}
+{{ $nucleo_icons := resources.Get "css/nucleo-icons.css" }}
+
+{{ $styles := slice $nucleo_icons $nucleo_svg $main | resources.Concat "css/styles.css" | minify }}
+
+
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">

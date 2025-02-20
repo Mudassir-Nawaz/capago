@@ -1,0 +1,94 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+title: 'My New Hugo Site'
+
+menu:
+  main: 
+    - name: 'Procédure'
+      weight: 10
+      url: /
+    - name: 'Visa'
+      weight: 20
+      url: /
+    - name: 'Services'
+      weight: 30
+      url: /
+    - name: 'Premium'
+      weight: 40
+      url: /
+    - name: 'Faq'
+      weight: 50
+      url: /
+    - name: 'Contact'
+      weight: 60
+      url: /
+
+  company:
+    - name: About Us
+      url: /
+      weight: 10
+    - name: Careers
+      url: /
+      weight: 20
+    - name: Press
+      url: /
+      weight: 30
+    - name: Blog
+      url: /
+      weight: 40
+
+  pages:
+    - name: Login
+      url: /
+      weight: 10
+    - name: Register
+      url: /
+      weight: 20
+    - name: Add list
+      url: /
+      weight: 30
+    - name: Contact
+      url: /
+      weight: 40
+
+  legal:
+    - name: Terms
+      url: /
+      weight: 10
+    - name: About Us
+      url: /
+      weight: 20
+    - name: Team
+      url: /
+      weight: 30
+    - name: Privacy
+      url: /
+      weight: 40
+
+  resources:
+    - name: Blog
+      url: /
+      weight: 10
+    - name: Service
+      url: /
+      weight: 20
+    - name: Product
+      url: /
+      weight: 30
+    - name: Product
+      url: /
+      weight: 40
+    - name: Pricing
+      url: /
+      weight: 50
+
+params:
+  info:
+    number: 00000000
+  announcement:
+    enable: true
+    name: News
+    text: 'Le bureau de Capetown fermera Mercredi 12 février 2025, exceptionnellement à 4pm. Veuillez nous excuser de la gêne occasionnée'
+  social:
+    linkedin: https://linkedin.com
+    whatsapp: https://web.whatsapp.com

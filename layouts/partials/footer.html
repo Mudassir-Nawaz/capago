@@ -1,0 +1,126 @@
+<!-- -------- START FOOTER 1 w/ COMPANY DESCRIPTION AND 4 COLS ------- -->
+<footer class="footer pt-5" style="background-color: #585856;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 mb-5 mb-lg-0">
+        {{ with site.Params.logo }}
+          <a href="">
+            <img src="{{ . | relURL }}" alt="{{ site.Title }}-logo">
+          </a>
+        {{ end }}
+        {{ with site.Params.info.slogan }}
+          <p class="mb-4 pb-2 text-white">
+              {{ . }}
+          </p>
+        {{ end }}
+        {{ with site.Params.social }}
+          {{ with .facebook }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-facebook"></span>
+          </a>
+          {{ end }}
+          {{ with .twitter }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-twitter"></span>
+          </a>
+          {{ end }}
+          {{ with .instagram }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-instagram"></span>
+          </a>
+          {{ end }}
+          {{ with .pinterest }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-pinterest"></span>
+          </a>
+          {{ end }}
+          {{ with .github }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-github"></span>
+          </a>
+          {{ end }}
+          {{ with .linkedin }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-linkedin"></span>
+          </a>
+          {{ end }}
+          {{ with .whatsapp }}
+          <a href="{{ . }}" target="_blank" class="text-white me-xl-4 me-3">
+            <span class="text-lg fab fa-whatsapp"></span>
+          </a>
+          {{ end }}
+        {{ end }}
+        </div>
+        {{ with site.Menus.company }}
+        <div class="col-md-2 col-6 ms-lg-auto mb-md-0 mb-4">
+          <h6 class="text-white fw-bolder">Company</h6>
+          <ul class="flex-column ms-n3 nav">
+            {{ range . }}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ .URL }}" target="_blank">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+  
+        {{ with site.Menus.pages }}
+        <div class="col-md-2 col-6 mb-md-0 mb-4">
+          <h6 class="text-white fw-bolder">Pages</h6>
+          <ul class="flex-column ms-n3 nav">
+            {{ range . }}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ .URL }}" target="_blank">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+        {{ with site.Menus.legal }}
+        <div class="col-md-2 col-6 mb-md-0 mb-4">
+          <h6 class="text-white fw-bolder">Legal</h6>
+          <ul class="flex-column ms-n3 nav">
+            {{ range . }}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ .URL }}" target="_blank">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end  }}
+          </ul>
+        </div>
+        {{ end }}
+  
+        {{ with site.Menus.resources }}
+        <div class="col-md-2 col-6 mb-md-0 mb-4">
+          <h6 class="text-white fw-bolder">Resources</h6>
+          <ul class="flex-column ms-n3 nav">
+            {{ range . }}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{ .URL }}" target="_blank">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+      <hr class="horizontal light mt-lg-5 mt-4 mb-sm-4 mb-1">
+      <div class="row">
+        <div class="row mx-lg-auto text-lg-center">
+          <p class="col-6 text-sm text-secondary text-start text-white">
+            Cgv | politique de confidentialité | politique de cookies | cgu
+          </p>
+          <p class="col-6 text-sm text-secondary text-end text-white">
+            © 2024 capago international. All rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- -------- END FOOTER 1 w/ COMPANY DESCRIPTION AND 4 COLS ------- -->

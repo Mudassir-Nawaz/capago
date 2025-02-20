@@ -1,0 +1,42 @@
+<!-- -------- START Testimonials w/ 3 cards  -------- -->
+{{ with .Params.testimonials }}
+{{ if .enable }}
+<section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto text-center pb-5">
+          <h2>{{ .title }}</h2>
+          <p>{{ .details }}</p>
+        </div>
+      </div>
+      <div class="row">
+        {{ range .reviews }}
+        <div class="col-md-4">
+          <div class="shadow rounded-3">
+            <div class="card card-plain text-center">
+              <div>
+                <i class="material-symbols-rounded text-warning" style="font-size: 35px;">star</i>
+                <i class="material-symbols-rounded text-warning" style="font-size: 35px;">star</i>
+                <i class="material-symbols-rounded text-warning" style="font-size: 35px;">star</i>
+                <i class="material-symbols-rounded text-warning" style="font-size: 35px;">star</i>
+                <i class="material-symbols-rounded text-warning" style="font-size: 35px;">star</i>
+              </div>
+              <div class="card-body text-start">
+                <h3><i class="fas fa-quote-left opacity-1"></i> {{ .title }}</h3>
+                <p class="fst-italic">{{ .review }}</p>
+                <div>
+                  <strong>{{ .name }}</strong>
+                  <p class="text-sm mb-0">{{ .position }}</p>
+                  <div class="text-sm mb-0">{{ .company }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  {{ end }}
+  <!-- -------- END Testimonials w/ 3 cards  -------- -->

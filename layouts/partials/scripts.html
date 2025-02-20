@@ -1,0 +1,17 @@
+{{ $popper := resources.Get "js/core/popper.min.js" }}
+{{ $bootstrap := resources.Get "js/core/bootstrap.min.js" }}
+{{ $scroll := resources.Get "js/plugins/perfect-scrollbar.min.js" }}
+{{ $typedjs := resources.Get "js/plugins/typedjs.js" }}
+{{ $countup := resources.Get "js/plugins/countup.min.js" }}
+{{ $rellax := resources.Get "js/plugins/rellax.min.js" }}
+{{ $tilt := resources.Get "js/plugins/tilt.min.js" }}
+{{ $choices := resources.Get "js/plugins/choices.min.js" }}
+{{ $parallax := resources.Get "js/plugins/parallax.min.js" }}
+{{ $nouislider := resources.Get "js/plugins/nouislider.min.js" }}
+{{ $anime := resources.Get "js/plugins/anime.min.js" }}
+{{ $materialui := resources.Get "js/material-kit-pro.js" }}
+{{ $custom := resources.Get "js/custom.js" }}
+
+{{ $bundle := slice $popper $bootstrap $scroll $typedjs $countup $rellax $tilt $choices $parallax $nouislider $anime $materialui $custom | resources.Concat "js/bundle.js" }}
+{{ $bundle := $bundle | minify }}
+<script src="{{ $bundle.RelPermalink }}"></script>

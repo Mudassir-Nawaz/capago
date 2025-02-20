@@ -1,0 +1,80 @@
+<!-- START Pricing w/ 2 cards & nav tabs -->
+{{ with .Params.pricing }}
+{{ if .enable }}
+<section class="pt-1 pb-5 bg-gray-100">
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-10 d-flex justify-content-center flex-column pt-3 content-center">
+          {{ .details | safeHTML }}
+        </div>
+        <div class="col-lg-7 col-md-12 ms-lg-auto me-lg-auto border border-2 border-dark p-3 rounded-3">
+          <div class="tab-content tab-space">
+            <div class="tab-pane active" id="personal">
+              <div class="row gap-3 gap-lg-0">
+
+                <div class="col-md-4">
+                    <div class="h-100">
+                        <div class="card-header text-sm-start text-center pt-4 pb-3 px-4" style="margin-top: 110px;">
+                        </div>
+                        <div class="card-body">
+                          {{ range .item }}
+                          <div class="d-flex pb-3">
+                            <span class="text-sm fw-bolder ps-3">{{ . }}</span>
+                          </div>
+                          {{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border border-dark">
+                        <div class="card-header text-sm-start text-center pt-4 pb-3 px-4">
+                          <h5 class="mb-0">Standard</h5>
+                          <a href="javascript:;" class="btn btn-sm bg-dark text-white w-100 rounded-pill mt-4 mb-2">
+                            En savoir
+                            <i class="fas fa-plus text-sm ms-1"></i>
+                          </a>
+                        </div>
+                        <hr class="horizontal dark my-0">
+                        <div class="card-body">
+                          {{ range .standard }}
+                          <div class="d-flex pb-3">
+                            <i class="material-symbols-rounded my-auto text-danger">close</i>
+                            <span class="text-xs ps-2" style="line-height: 1.8;">{{ . }}</span>
+                          </div>
+                          {{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="card h-100 border" style="border-color: #17AF99 !important;">
+                      <div class="card-header text-sm-start text-center pt-4 pb-3 px-4">
+                        <h5 class="mb-0" style="color: #17AF99;">Pack sérénité</h5>
+                        <a href="javascript:;" class="btn btn-sm bg-gradient-dark text-white w-100 rounded-pill mt-4 mb-2">
+                          <i class="fas fa-phone-volume text-sm me-1"></i>
+                          Rappellez moi
+                        </a>
+                      </div>
+                      <hr class="horizontal dark my-0">
+                      <div class="card-body">
+                        {{ range .premium }}
+                        <div class="d-flex pb-3">
+                          <i class="material-symbols-rounded my-auto" style="color: #17AF99;">done</i>
+                          <span class="text-xs ps-2" style="line-height: 1.8;">{{ . }}</span>
+                        </div>
+                        {{ end }}
+                      </div>
+                  </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+{{ end }}
+  <!-- END Pricing w/ 2 cards & nav tabs -->

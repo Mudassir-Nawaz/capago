@@ -1,0 +1,150 @@
+<!-- -------- START HEADER 4 w/ search book a ticket form ------- -->
+<header>
+    <nav
+    class="navbar navbar-expand-lg navbar-light bg-white z-index-3 py-3">
+    <div class="container">
+        <a class="navbar-brand" href="{{ site.BaseURL }}" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+        <img src="{{ site.Params.logo }}" alt="{{ site.Title }}-logo">
+        </a>
+        <div class="d-lg-none">
+            <div class="mb-2">
+                <p class="text-small mb-0 d-inline" style="font-size: 12px;">
+                    <i class="fas fa-globe me-1"></i>
+                    Languages
+                    <select name="lang" id="" class="border-0" style="outline: 0;">
+                        <option value="franch"><a href="">FR</a></option>
+                    </select>
+                </p>
+                <p class="text-small mb-0 d-inline ms-3" style="font-size: 12px;">
+                    <i class="fas fa-user me-1"></i>
+                    Login
+                </p>
+            </div>
+            <a href="tel:{{ site.Params.info.number }}" class="btn bg-gradient-dark py-1 px-3 rounded-pill">
+                <i class="fas fa-phone-volume me-2"></i>
+                Rappellez moi
+            </a>
+        </div>
+        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+        </span>
+        </button>
+        <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
+            <ul class="navbar-nav navbar-nav-hover mx-auto">
+                {{ range site.Menus.main }}
+                <li class="nav-item mx-2">
+                <a href="{{ .URL }}" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button">
+                    {{ .Name }}
+                </a>
+                </li>
+                {{ end }}
+            </ul>
+
+            <ul class="navbar-nav d-lg-block d-none">
+                <li class="nav-item">
+                    <div>
+                        <div class="mb-2">
+                            <p class="text-small mb-0 d-inline" style="font-size: 12px;">
+                                <i class="fas fa-globe me-1"></i>
+                                Languages
+                                <select name="lang" id="" class="border-0" style="outline: 0;">
+                                    <option value="franch"><a href="">FR</a></option>
+                                </select>
+                            </p>
+                            <p class="text-small mb-0 d-inline ms-3" style="font-size: 12px;">
+                                <i class="fas fa-user me-1"></i>
+                                Login
+                            </p>
+                        </div>
+                        <a href="tel:{{ site.Params.info.number }}" class="btn bg-gradient-dark py-1 px-3 rounded-pill">
+                            <i class="fas fa-phone-volume me-2"></i>
+                            Rappellez moi
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+    {{ with site.Params.announcement }}
+    {{ if .enable }}
+    <div class="py-1" style="background-color: #ec7343;">
+        <div class="container text-white fw-bolder" style="font-size: 18px;">
+            <span class="bg-white rounded-3 p-1" style="color: #ec7343;">{{ .name }}</span>
+            {{ .text }}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ $hero_bg := "images/hero-bg.jpg" | relURL }}
+    <div class="page-header min-vh-75" style="background-image: url('{{ $hero_bg }}');" loading="lazy">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-white text-center">
+            {{ with .Params.heading }}
+            <h2 class="text-white">{{ . }}</h2>
+            {{ end }}
+            {{ with .Params.subheading }}
+            <p class="lead">{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ with .Params.featured }}
+    <div class="card shadow-lg mt-n5 mx-4 mb-4">
+        <div class="card-body">
+          <div class="container-fluid px-0 overflow-hidden">
+            <div class="row">
+            {{ range $i, $p := .cards }}
+            {{ $even := modBool $i 2 }}
+              <div class="col-lg-4 col-sm-6 mb-sm-0 mb-4">
+                <div class="info-horizontal {{ if not $even }}bg-gradient-dark{{ end }} border-radius-xl p-4 d-block d-md-flex position-relative">
+                    <div class="description ps-0 ps-md-4 d-flex justify-content-center align-items-center flex-column">
+                        <i class="material-symbols-rounded text-3xl {{ if not $even }}text-white{{ end }} mb-3">{{ .icon }}</i>
+                        <div class="text-center">
+                            <h5 class="{{ if not $even }}text-white{{ end }} mb-0">{{ .title }}</h5>
+                            <p class="{{ if not $even }}text-white pe-0 pe-lg-5{{ end }}">{{ .details }}</p>
+                        </div>
+                        {{ with .button }}
+                        <a href="{{ .url }}" class="text-primary icon-rotate btn bg-white">
+                            {{ .label }}
+                            <i class="fas fa-plus text-sm ms-1"></i>
+                        </a>
+                        {{ end }}
+                  </div>
+                <span class="triangle d-none d-lg-block" style="border-left: 30px solid {{ if not $even }}white{{ else }}#01aa9c{{ end }}; left: {{ if not $even }}0{{ else }}-25px{{ end }}"></span>
+                </div>
+              </div>
+            {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ with .Params.cta }}
+      {{ if .enable }}
+      <div class="py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto text-center">
+              <h2>{{ .title }}</h2>
+              <p class="lead mb-0" style="font-size: 20px;">{{ .details }}</p>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <a href="tel:{{ site.Params.info.number }}" class="btn bg-gradient-dark py-2 px-5 rounded-pill w-20 mx-auto" style="font-size: 16px;">
+                <i class="fas fa-phone-volume me-2"></i>
+                Rappellez moi
+            </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </header>
+  <!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
